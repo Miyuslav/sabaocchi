@@ -315,22 +315,22 @@ function draw(){
     ctx.font='bold 9px sans-serif'; ctx.fillStyle='#1565C0';
     const zx=44+Math.sin(t*0.1);
     ctx.fillText('z',zx,8); ctx.font='bold 7px sans-serif'; ctx.fillText('z',zx-2,15);
-    if(state.hasPoop) drawPoop(44,48,0.75);
+    if(state.hasPoop) drawPoop(44,38,0.75);
     return;
   }
   if(state.pooping){
     ctx.save(); ctx.translate(0,2); drawCatUpright(t,sc,true); ctx.restore();
     const p=Math.min(state.poopAnim/30,1);
-    if(p>0) drawPoop(44,48-((1-p)*8),0.75*p);
+    if(p>0) drawPoop(44,38-((1-p)*8),0.75*p);
     return;
   }
   if(state.lounging){
     drawCatLounge(t,sc);
-    if(state.hasPoop) drawPoop(44,48,0.75);
+    if(state.hasPoop) drawPoop(44,38,0.75);
     return;
   }
   drawCatUpright(t,sc,ang);
-  if(state.hasPoop) drawPoop(44,48,0.75);
+  if(state.hasPoop) drawPoop(44,38,0.75);
 }
 
 function updateBars(){ document.getElementById('bar-food').style.width=state.food+'%'; document.getElementById('bar-happy').style.width=state.happy+'%'; document.getElementById('bar-energy').style.width=state.energy+'%'; }
